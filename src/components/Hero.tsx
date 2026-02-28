@@ -62,26 +62,26 @@ export default function Hero() {
       <div className="w-full h-48 rounded-lg border border-white/10 mb-6" />
 
       {/* profile */}
-      <div className="flex items-center gap-4 mb-4">
-        <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white/20">
+      <div className="flex gap-4 mb-4">
+        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/20">
           <Image src="/pfp.JPG" alt="David" fill className="object-cover" />
         </div>
 
         {/* name */}
         <div>
-          <h1 className="text-white font-semibold text-xl">
+          <h1 className="text-white py-1 font-semibold text-2xl">
             Hey, I&apos;m David 👋
           </h1>
 
           <div className="flex items-center gap-2 mt-1">
             <span className="w-2 h-2 rounded-full bg-[#2196f3] animate-pulse" />
-            <span className="text-white/60 text-sm">Available for Work</span>
+            <span className="text-white/80 text-sm">Available for Work</span>
           </div>
         </div>
       </div>
 
       {/* bio */}
-      <p className="text-white/70 text-sm leading-relaxed mb-8 max-w-lg">
+      <p className="text-white/70 text-lg leading-relaxed mb-8 mx-0.5">
         I&apos;m a front-end developer specializing in building clean,
         responsive interfaces and crafting engaging user experiences with great
         attention to detail.
