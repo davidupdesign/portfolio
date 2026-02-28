@@ -5,6 +5,7 @@ import "./globals.css";
 import ColorBends from "@/components/ColorBends";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Navbar from "@/components/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,7 @@ export default function RootLayout({
           />
         </div>
         <div className="relative z-10 min-h-screen">
+          <Navbar />
           <ThemeProvider>{children}</ThemeProvider>
         </div>
       </body>
