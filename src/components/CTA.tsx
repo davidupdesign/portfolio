@@ -3,7 +3,7 @@ import { AtSign } from 'lucide-react';
 
 export default function CTA() {
   return (
-    <section className="container-narrow mt-16 mb-8 text-center">
+    <section className="container-narrow mt-16 mb-12 text-center">
       <p className="text-white/40 text-sm mb-2">
         Interested in working together?
       </p>

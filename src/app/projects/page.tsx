@@ -108,7 +108,7 @@ export default function ProjectsPage() {
       <Navbar />
 
       <section className="container-narrow mt-10 pb-10">
-        <h1 className="text-white font-semibold text-2xl mb-8 pl-0.5">
+        <h1 className="text-white font-semibold text-3xl mb-8 pl-0.5">
           Projects
         </h1>
         <div className="flex">
