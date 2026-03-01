@@ -1,5 +1,6 @@
 "use client";
 
+import { ChartNoAxesGantt } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
 import {
@@ -26,35 +27,39 @@ const techStack: { icon: SimpleIcon; label: string }[] = [
 ];
 
 function TechCard({ icon, label }: { icon: SimpleIcon; label: string }) {
-    const [hovered, setHovered] = useState(false)
-  
-    const brandColor = `#${icon.hex}`
-    const isTooDark = icon.hex === "000000" || icon.hex === "010101"
-    const iconColor = hovered ? (isTooDark ? "#ffffff" : brandColor) : "white"
-  
-    return (
-      <div
-        className="flex flex-col items-center gap-2 p-3 rounded-lg border transition-all duration-200 cursor-default"
-        style={{
-          backgroundColor: hovered ? "rgba(255,255,255,0.12)" : "rgba(255,255,255,0.05)",
-          borderColor: hovered ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.1)",
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
+  const [hovered, setHovered] = useState(false);
+
+  const brandColor = `#${icon.hex}`;
+  const isTooDark = icon.hex === "000000" || icon.hex === "010101";
+  const iconColor = hovered ? (isTooDark ? "#ffffff" : brandColor) : "white";
+
+  return (
+    <div
+      className="flex flex-col items-center gap-2 p-3 rounded-lg border transition-all duration-200 cursor-default"
+      style={{
+        backgroundColor: hovered
+          ? "rgba(255,255,255,0.12)"
+          : "rgba(255,255,255,0.05)",
+        borderColor: hovered
+          ? "rgba(255,255,255,0.25)"
+          : "rgba(255,255,255,0.1)",
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <svg
+        role="img"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        fill={iconColor}
+        className="w-6 h-6 transition-colors duration-200"
       >
-        <svg
-          role="img"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          fill={iconColor}
-          className="w-6 h-6 transition-colors duration-200"
-        >
-          <path d={icon.path} />
-        </svg>
-        <span className="text-white/60 text-xs">{label}</span>
-      </div>
-    )
-  }
+        <path d={icon.path} />
+      </svg>
+      <span className="text-white/60 text-xs">{label}</span>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
@@ -70,7 +75,9 @@ export default function Hero() {
         {/* name */}
         <div>
           <h1 className="text-white py-1 font-semibold text-2xl">
-            Hey, I&apos;m David 👋
+            <span className="inline-flex items-center">
+              Hey, I&apos;m David <ChartNoAxesGantt className="w-6 h-6 ml-2 text-[#2196f3] stroke-3" />
+            </span>
           </h1>
 
           <div className="flex items-center gap-2 mt-1">
