@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
-      <nav className="flex items-center justify-between mx-auto max-w-2xl px-6 py-5">
+      <nav className="flex items-center justify-between mx-auto container-narrow px-6 py-5">
         {/* left - logo */}
         <Link
           href="/"
