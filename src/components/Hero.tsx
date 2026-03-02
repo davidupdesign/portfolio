@@ -1,7 +1,9 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 import { ChartNoAxesGantt } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   siNextdotjs,
@@ -25,6 +27,9 @@ const techStack: { icon: SimpleIcon; label: string }[] = [
   { icon: siPostgresql, label: "PostgreSQL" },
   { icon: siGit, label: "Git" },
 ];
+
+//pfp images
+const pfpImages = ["/pfp/1-pfp.webp", "/pfp/2-pfp.webp", "/pfp/3-pfp.webp"];
 
 function TechCard({ icon, label }: { icon: SimpleIcon; label: string }) {
   const [hovered, setHovered] = useState(false);
@@ -60,23 +65,62 @@ function TechCard({ icon, label }: { icon: SimpleIcon; label: string }) {
     </div>
   );
 }
-
 export default function Hero() {
+  //traching shown image
+  const [currentPfp, setCurrentPfp] = useState(0);
+
+  const handlePfpClick = () =>
+    setCurrentPfp((prev) => (prev + 1) % pfpImages.length);
+
+  useEffect(() => {
+    // if already on first image, do nothing
+    if (currentPfp === 0) return;
+
+    // after 5 sec, resetting back to first image
+    const timer = setTimeout(() => setCurrentPfp(0), 5000);
+
+    //clearing the timer if user clicks again before 5s is up
+    return () => clearTimeout(timer);
+  }, [currentPfp]);
+
   return (
     <section className="container-narrow pt-24">
       <div className="w-full h-48 rounded-lg border border-white/10 mb-6" />
 
       {/* profile */}
       <div className="flex gap-4 mb-4">
-        <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/20">
-          <Image src="/pfp.JPG" alt="David" fill className="object-cover" />
+        <div
+          onClick={handlePfpClick}
+          className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-white/20 cursor-pointer hover:border-white/40 transition-colors duration-200"
+        >
+          <AnimatePresence mode="sync">
+            <motion.div
+              key={currentPfp}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+            >
+              <Image
+                src={pfpImages[currentPfp]}
+                alt="David"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* name */}
         <div>
-          <h1 className="text-white py-1 font-semibold text-2xl">
+          <h1 className="text-white py-1 font-semibold text-2xl cursor-default group ">
             <span className="inline-flex items-center">
-              Hey, I&apos;m David <ChartNoAxesGantt className="w-6 h-6 ml-2 text-[#2196f3] stroke-3" />
+              Hey, I&apos;m{" "}
+              <span className="ml-1 group-hover:text-[#2196F3] group-hover:font-bold transition-all duration-400 group-hover:ml-2">
+                David{" "}
+              </span>
+              <ChartNoAxesGantt className="w-6 h-6 ml-2 text-[#2196f3] stroke-3" />
             </span>
           </h1>
 
@@ -88,10 +132,16 @@ export default function Hero() {
       </div>
 
       {/* bio */}
-      <p className="text-white/70 text-lg leading-relaxed mb-8 mx-0.5">
-        I&apos;m a front-end developer specializing in building clean,
-        responsive interfaces and crafting engaging user experiences with great
-        attention to detail.
+      <p className="text-white/70 text-lg leading-relaxed mb-8 mx-0.5 group">
+        I&apos;m a{" "}
+        <span className="group-hover:text-[#2196F3] transition-all duration-400">
+          front-end developer
+        </span>{" "}
+        specializing in building{" "}
+        <span className="group-hover:text-[#2196F3] transition-all duration-400">
+          clean, responsive interfaces
+        </span>{" "}
+        and crafting engaging user experiences with great attention to detail.
       </p>
 
       {/* tech stack */}

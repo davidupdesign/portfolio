@@ -42,8 +42,8 @@ export default function RootLayout({
             scale={1}
             frequency={1}
             warpStrength={1}
-            mouseInfluence={0.6}
-            parallax={0.3}
+            mouseInfluence={0.1}
+            parallax={0.1}
             noise={0.25}
           />
         </div>

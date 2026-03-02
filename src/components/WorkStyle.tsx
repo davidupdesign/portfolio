@@ -16,9 +16,9 @@ export default function WorkStyle() {
           needs and have successfully managed these projects from start to
           finish.
         </p>
-        <p className="text-white/80 text-sm leading-relaxed mb-5">
+        <p className="text-white/80 text-sm italic leading-relaxed mb-5">
           If I don&apos;t know how to do something, I know how to learn.
-          <span className="text-[#2196F3] font-medium"> I&apos;ll figure it out.</span>
+          <span className="text-[#2196F3] not-italic font-medium"> I&apos;ll figure it out.</span>
         </p>
 
         {/* tags */}

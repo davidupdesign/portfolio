@@ -133,9 +133,13 @@ export default async function ChangelogWidget() {
         href="https://clivy-one.vercel.app/changelog/portfolio-project"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-1 mt-3 text-white/40 text-xs hover:text-white/70 transition-colors w-fit ml-auto"
+        className="relative group flex items-center gap-1 mt-4 text-white/40 text-xs hover:text-[#2196F3] transition-colors duration-300 w-fit ml-auto"
       >
-        View full changelog →
+        View full changelog
+        <span className="transition-transform duration-300 group-hover:translate-x-1">
+          →
+        </span>
+        <span className="absolute bottom-0 left-0 w-full h-px bg-white/40 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
       </a>
 
       {/* <iframe
