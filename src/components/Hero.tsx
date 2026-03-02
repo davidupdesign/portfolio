@@ -135,7 +135,7 @@ export default function Hero() {
       <p className="text-white/70 text-lg leading-relaxed mb-8 mx-0.5 group">
         I&apos;m a{" "}
         <span className="group-hover:text-[#2196F3] transition-all duration-400">
-          front-end developer
+          full-stack developer
         </span>{" "}
         specializing in building{" "}
         <span className="group-hover:text-[#2196F3] transition-all duration-400">

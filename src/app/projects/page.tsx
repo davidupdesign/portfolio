@@ -61,7 +61,7 @@ export default function ProjectsPage() {
     <main className="pt-20">
       
       <ScrollToHash />
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="container-narrow mt-10 pb-10">
         <h1 className="text-white font-semibold text-3xl mb-8 pl-0.5">Projects</h1>

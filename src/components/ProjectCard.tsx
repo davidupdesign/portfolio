@@ -94,11 +94,9 @@ export default function ProjectCard({
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center gap-1 text-xs px-2.5 py-1 rounded-md border border-white/15 text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
-
                     >
-                      
-                      View Live <ExternalLink className="w-3.5 h-3.5 text-[#2196F3] transition-colors duration-200 group-hover:animate-[pulse_1s_ease-in-out_infinite]" />
-                      
+                      View Live{" "}
+                      <ExternalLink className="w-3.5 h-3.5 text-[#2196F3] transition-colors duration-200 group-hover:animate-[pulse_1s_ease-in-out_infinite]" />
                     </a>
 
                     <a
@@ -188,7 +186,10 @@ export default function ProjectCard({
 
               {/* collapse btn */}
               <button
-                onClick={() => setExpanded(false)}
+                onClick={() => {
+                  setExpanded(false);
+                  setImageHovered(false);
+                }}
                 className="absolute top-3 right-3 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/60 backdrop-blur-sm text-white/70 text-xs hover:text-white transition-colors cursor-pointer"
               >
                 <span className="inline-flex items-center">
@@ -212,7 +213,8 @@ export default function ProjectCard({
                     rel="noopener noreferrer"
                     className="group flex items-center gap-1 text-xs px-2.5 py-1 rounded-md border border-white/15 text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
                   >
-                    View Live <ExternalLink className="w-3.5 h-3.5 text-[#2196F3] transition-colors duration-200 group-hover:animate-[pulse_1s_ease-in-out_infinite]" />
+                    View Live{" "}
+                    <ExternalLink className="w-3.5 h-3.5 text-[#2196F3] transition-colors duration-200 group-hover:animate-[pulse_1s_ease-in-out_infinite]" />
                   </a>
 
                   <a

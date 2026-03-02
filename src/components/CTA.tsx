@@ -19,7 +19,7 @@ export default function CTA() {
       <p className="text-white/40 text-md mb-4">
         Interested in working together?
       </p>
-      <h2 className="text-white font-bold text-5xl mb-8">
+      <h2 className="text-white font-bold text-4xl mb-8">
         Let&apos;s Connect.
       </h2>
 

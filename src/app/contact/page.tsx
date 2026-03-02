@@ -65,7 +65,7 @@ export default function ContactPage() {
 
   return (
     <main className="pt-20">
-      <Navbar />
+      {/* <Navbar /> */}
 
       <section className="container-narrow mt-12 pb-6">
         {/* heading */}

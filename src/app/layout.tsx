@@ -6,6 +6,7 @@ import ColorBends from "@/components/ColorBends";
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
+import AnimatedLayout from "@/components/AnimatedLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,13 +44,22 @@ export default function RootLayout({
             frequency={1}
             warpStrength={1}
             mouseInfluence={0.1}
-            parallax={0.1}
+            parallax={0.6}
             noise={0.25}
           />
         </div>
+
+        {/* overlay */}
+        <div
+          className="fixed inset-0 z-1"
+          style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(6px)" }}
+        />
+
         <div className="relative z-10 min-h-screen">
           <Navbar />
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <AnimatedLayout>{children}</AnimatedLayout>
+          </ThemeProvider>
         </div>
       </body>
     </html>
