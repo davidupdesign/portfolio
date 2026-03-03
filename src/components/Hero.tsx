@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import { ChartNoAxesGantt } from "lucide-react";
+import { ChartNoAxesGantt, FileUser } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
@@ -129,6 +129,18 @@ export default function Hero() {
             <span className="text-white/80 text-sm">Available for Work</span>
           </div>
         </div>
+
+        {/* resume */}
+        <a
+          href="YOUR_RESUME_URL"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-auto self-start"
+        >
+          <div className="px-3 py-1 font-medium  rounded-lg border border-white/10  text-white/50  hover:text-[#2196F3] hover:border-white/15 hover:bg-white/5 transition-all duration-200">
+            <p>Resume </p>
+          </div>
+        </a>
       </div>
 
       {/* bio */}

@@ -30,7 +30,7 @@ export default function CTA() {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
           style={{ padding: hovered ? "0.625rem 1.75rem" : "0.625rem 1.25rem" }}
-          className="relative flex items-center gap-2 rounded-full border border-white/15 text-white/70 text-sm hover:text-white hover:border-white/30 transition-all duration-200 cursor-pointer"
+          className="relative flex items-center gap-2 rounded-full border border-white/15 text-white/70 text-sm hover:text-white hover:border-white/30 transition-all duration-500 ease-in-out cursor-pointer"
         >
           <motion.div
             animate={{ x: hovered ? -8 : 0 }}
@@ -48,8 +48,7 @@ export default function CTA() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.1 }}
-                  
+                  transition={{ duration: 0.1, ease: "easeInOut" }}
                 >
                   Copied!
                 </motion.span>
@@ -60,7 +59,7 @@ export default function CTA() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.1 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
                   davidupdesign@gmail.com
                 </motion.span>
@@ -71,7 +70,7 @@ export default function CTA() {
                   initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.1 }}
+                  transition={{ duration: 0.2, ease: "easeInOut" }}
                 >
                   Email
                 </motion.span>
