@@ -7,6 +7,7 @@ import ColorBends from "@/components/ColorBends";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/Navbar";
 import AnimatedLayout from "@/components/AnimatedLayout";
+import { AudioProvider } from "@/context/AudioContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -55,12 +56,15 @@ export default function RootLayout({
           style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(6px)" }}
         />
 
-        <div className="relative z-10 min-h-screen">
-          <Navbar />
-          <ThemeProvider>
-            <AnimatedLayout>{children}</AnimatedLayout>
-          </ThemeProvider>
-        </div>
+        <AudioProvider>
+          <div className="relative z-10 min-h-screen">
+            <Navbar />
+
+            <ThemeProvider>
+              <AnimatedLayout>{children}</AnimatedLayout>
+            </ThemeProvider>
+          </div>
+        </AudioProvider>
       </body>
     </html>
   );

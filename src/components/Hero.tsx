@@ -3,7 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 import { ChartNoAxesGantt, FileUser } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import Image from "next/image";
 import {
   siNextdotjs,
@@ -16,6 +16,9 @@ import {
   siJavascript,
   type SimpleIcon,
 } from "simple-icons";
+
+import FloatingLines from "./FloatingLines";
+import { useAudio } from "@/context/AudioContext";
 
 const techStack: { icon: SimpleIcon; label: string }[] = [
   { icon: siNextdotjs, label: "Next.js" },
@@ -83,9 +86,91 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, [currentPfp]);
 
+  const { playing, togglePlay } = useAudio();
+
+  const floatingLines = useMemo(
+    () => (
+      <FloatingLines
+        linesGradient={["#000000", "#2196f3"]}
+        animationSpeed={1}
+        interactive
+        bendRadius={4}
+        bendStrength={-0.7}
+        mouseDamping={0.05}
+        parallax
+        parallaxStrength={0.2}
+      />
+    ),
+    [],
+  );
+
+  const [clock, setClock] = useState({ time: "", date: "" });
+
+  useEffect(() => {
+    const update = () => {
+      const now = new Date();
+      setClock({
+        time: now.toLocaleTimeString("en-US", {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+        }),
+        date: now.toLocaleDateString("en-US", {
+          weekday: "short",
+          month: "short",
+          day: "numeric",
+        }),
+      });
+    };
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="container-narrow pt-24">
-      <div className="w-full h-48 rounded-lg border border-white/10 mb-6" />
+      {/* banner */}
+
+      <div className="w-full h-48 rounded-lg border border-white/10 mb-6 overflow-hidden relative">
+        {floatingLines}
+
+        {/* clock — top left */}
+        <div className="absolute top-3 left-3 z-10 bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg px-5 py-3">
+          <p className="text-white font-semibold text-lg leading-none">
+            {clock.time}
+          </p>
+          <p className="text-white/40 text-xs mt-1">{clock.date}</p>
+        </div>
+
+        {/* compact player — bottom right */}
+        <div className="absolute bottom-3 right-3 flex items-center gap-3 bg-black/40 backdrop-blur-sm border border-white/10 rounded-lg px-3 py-2 w-[220px]">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/9/9b/Tame_Impala_-_Currents.png"
+            alt="Now Playing"
+            className="w-9 h-9 rounded-md shrink-0 object-cover"
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-white text-xs font-semibold truncate">
+              Let it happen
+            </p>
+            <p className="text-white/40 text-xs truncate">Tame Impala</p>
+          </div>
+          <button onClick={togglePlay} className="shrink-0 cursor-pointer">
+            {playing ? (
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+              </svg>
+            ) : (
+              <svg
+                viewBox="0 0 24 24"
+                className="w-5 h-5 fill-white/60 hover:fill-white transition-colors"
+              >
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
 
       {/* profile */}
       <div className="flex gap-4 mb-4">

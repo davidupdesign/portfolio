@@ -9,6 +9,7 @@ import WorkStyle from "@/components/WorkStyle";
 export default function Home() {
   return (
     <main className="pt-10">
+      
       <Hero />
       <ChangelogWidget />
       <ProjectsSection />
