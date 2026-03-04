@@ -83,7 +83,7 @@ export default function ContactMap() {
   }, []);
 
   return (
-    <div className="relative w-full h-52 rounded-xl overflow-hidden mb-6 border-2 border-white/10">
+    <div className="relative w-ful h-42 sm:h-52 rounded-xl overflow-hidden mb-6 border-2 border-white/10">
       <div id="contact-map" className="w-full h-full" />
 
       {/*  clock */}

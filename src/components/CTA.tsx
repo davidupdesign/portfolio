@@ -41,40 +41,52 @@ export default function CTA() {
 
           <div className="relative overflow-hidden">
             <AnimatePresence mode="wait">
-              {copied ? (
-                <motion.span
-                  key="copied"
-                  className="block text-green-400 whitespace-nowrap"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.1, ease: "easeInOut" }}
-                >
-                  Copied!
-                </motion.span>
-              ) : hovered ? (
-                <motion.span
-                  key="email"
-                  className="block whitespace-nowrap"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                >
-                  davidupdesign@gmail.com
-                </motion.span>
-              ) : (
-                <motion.span
-                  key="default"
-                  className="block"
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -6 }}
-                  transition={{ duration: 0.2, ease: "easeInOut" }}
-                >
-                  Email
-                </motion.span>
-              )}
+            {copied ? (
+  <motion.span
+    key="copied"
+    className="block text-green-400 whitespace-nowrap"
+    initial={{ opacity: 0, y: 6 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -6 }}
+    transition={{ duration: 0.2, ease: "easeInOut" }}
+  >
+    Copied!
+  </motion.span>
+) : hovered ? (
+  <>
+    <motion.span
+      key="email"
+      className="hidden md:block whitespace-nowrap"
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -6 }}
+      transition={{ duration: 0.1, ease: "easeInOut" }}
+    >
+      davidupdesign@gmail.com
+    </motion.span>
+    <motion.span
+      key="email-mobile"
+      className="block md:hidden"
+      initial={{ opacity: 0, y: 6 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -6 }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
+    >
+      Email
+    </motion.span>
+  </>
+) : (
+  <motion.span
+    key="default"
+    className="block"
+    initial={{ opacity: 0, y: 6 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -6 }}
+    transition={{ duration: 0.2, ease: "easeInOut" }}
+  >
+    Email
+  </motion.span>
+)}
             </AnimatePresence>
           </div>
         </button>

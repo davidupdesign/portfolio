@@ -25,7 +25,7 @@ const techStack: { icon: SimpleIcon; label: string }[] = [
   { icon: siReact, label: "React" },
   { icon: siTypescript, label: "TypeScript" },
   { icon: siJavascript, label: "JavaScript" },
-  { icon: siTailwindcss, label: "Tailwind CSS" },
+  { icon: siTailwindcss, label: "Tailwind" },
   { icon: siPrisma, label: "Prisma" },
   { icon: siPostgresql, label: "PostgreSQL" },
   { icon: siGit, label: "Git" },
@@ -128,7 +128,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="container-narrow pt-24">
+    <section className="container-narrow pt-6">
       {/* banner */}
 
       <div className="w-full h-48 rounded-lg border border-white/10 mb-6 overflow-hidden relative">
@@ -220,7 +220,7 @@ export default function Hero() {
           href="YOUR_RESUME_URL"
           target="_blank"
           rel="noopener noreferrer"
-          className="ml-auto self-start"
+          className="ml-auto self-start hidden sm:block"
         >
           <div className="px-3 py-1 font-medium  rounded-lg border border-white/10  text-white/50  hover:text-[#2196F3] hover:border-white/15 hover:bg-white/5 transition-all duration-200">
             <p>Resume </p>
@@ -229,7 +229,7 @@ export default function Hero() {
       </div>
 
       {/* bio */}
-      <p className="text-white/70 text-lg leading-relaxed mb-8 mx-0.5 group">
+      <p className="text-white/70 text-lg leading-relaxed sm:mb-8 mb-2 mx-0.5 group">
         I&apos;m a{" "}
         <span className="group-hover:text-[#2196F3] transition-all duration-400">
           full-stack developer
@@ -241,12 +241,33 @@ export default function Hero() {
         and crafting engaging user experiences with great attention to detail.
       </p>
 
+      {/* mobile only resume */}
+      <a
+        href="YOUR_RESUME_URL"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mb-8 w-full text-center sm:hidden block"
+      >
+        <div className="px-4 py-2 font-medium rounded-lg border border-white/10 text-[#2196F3] bg-black/10 hover:text-[#2196F3] hover:border-white/15 hover:bg-white/5 transition-all duration-200">
+          Resume
+        </div>
+      </a>
+
+     {/* tech stack  label */}
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-white/10 bg-white/5 mb-5">
+        {/* <span className="w-1.5 h-1.5 rounded-full bg-[#2196F3]" /> */}
+        <span className="text-white/50 text-sm">
+          Tech Stack
+        </span>
+      </div>
+
       {/* tech stack */}
       <div className="grid grid-cols-4 gap-2">
         {techStack.map((item) => (
           <TechCard key={item.label} icon={item.icon} label={item.label} />
         ))}
       </div>
+
     </section>
   );
 }

@@ -27,15 +27,6 @@ export default function Footer() {
             LinkedIn
           </a>
 
-          {/* instagram */}
-          <a
-            href="https://www.instagram.com/davidupdesign/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/40 text-xs hover:text-white/70 transition-colors"
-          >
-            Instagram
-          </a>
 
           {/* email */}
           <a
@@ -45,8 +36,17 @@ export default function Footer() {
             Email
           </a>
 
-        </div>
+          {/* instagram */}
+          <a
+            href="https://www.instagram.com/davidupdesign/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:block text-white/40 text-xs hover:text-white/70 transition-colors"
+            >
+            Instagram
+          </a>
 
+            </div>
         {/* right */}
         <span className="text-white/25 text-xs">
         &copy; 2026 David K

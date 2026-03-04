@@ -58,7 +58,7 @@ const projects: Project[] = [
 
 export default function ProjectsPage() {
   return (
-    <main className="pt-20">
+    <main className="pt-6">
       
       <ScrollToHash />
       {/* <Navbar /> */}

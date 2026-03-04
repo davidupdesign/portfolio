@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Linkedin, Github, } from "lucide-react";
+import { Mail, Linkedin, Github, Instagram } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -64,7 +64,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="pt-20">
+    <main className="pt-6">
       {/* <Navbar /> */}
 
       <section className="container-narrow mt-12 pb-6">
@@ -74,7 +74,7 @@ export default function ContactPage() {
           <h1 className="text-white font-bold text-4xl mb-3">
             Let&apos;s Connect.
           </h1>
-          {/* availability badge */}
+          {/* open to opport badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#2196F3] bg-[#2196F3]/10">
             <span className="w-1.5 h-1.5 rounded-full bg-[#2196F3] animate-pulse" />
             <span className="text-[#2196F3] text-xs">
@@ -87,7 +87,7 @@ export default function ContactPage() {
         <div>
           <ContactMap />
         </div>
-        
+
         {/* conent */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* left — form */}
@@ -207,6 +207,19 @@ export default function ContactPage() {
                   <Github className="w-4 h-4" />
                 </div>
                 <span className="text-sm">github.com/davidupdesign</span>
+              </a>
+
+              {/* instagram */}
+              <a
+                href="https://instagram.com/davidupdesign"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-white/50 hover:text-white transition-colors group"
+              >
+                <div className="w-9 h-9 rounded-lg border border-white/10 bg-white/5 flex items-center justify-center group-hover:border-white/20 transition-colors">
+                  <Instagram className="w-4 h-4" />
+                </div>
+                <span className="text-sm">instagram.com/davidupdesign</span>
               </a>
             </div>
           </div>

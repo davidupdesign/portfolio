@@ -24,7 +24,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+    <header className="relative top-0 left-0 right-0 z-50 pointer-events-none">
       <nav className="flex items-center justify-between mx-auto container-narrow px-6 py-5">
         {/* layer 1 */}
         <div

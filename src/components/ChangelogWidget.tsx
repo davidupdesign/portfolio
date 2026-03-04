@@ -89,7 +89,7 @@ export default async function ChangelogWidget() {
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-white/10 bg-white/5 mb-5">
         {/* <span className="w-1.5 h-1.5 rounded-full bg-[#2196F3]" /> */}
         <span className="text-white/50 text-sm">
-          My Portfolio&apos;s Changelog
+          Portfolio&apos;s Changelog
         </span>
       </div>
 

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Github, ExternalLink, Expand, ChevronUp } from "lucide-react";
+import { Github, ExternalLink, Expand, ChevronUp, Maximize, Maximize2, Fullscreen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Squircle } from "lucide-react";
 
@@ -40,7 +40,7 @@ export default function ProjectCard({
           <motion.div
             key="collapsed"
             layout="preserve-aspect"
-            className="flex flex-col md:flex-row h-64"
+            className="flex flex-col md:flex-row md:h-64"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
@@ -48,7 +48,7 @@ export default function ProjectCard({
           >
             {/* image with hover overlay */}
             <div
-              className={`relative w-full md:w-1/2 shrink-0 p-3 cursor-pointer ${imageRight ? "md:order-2" : "md:order-1"}`}
+              className={`relative w-full md:w-1/2 h-60 md:h-full shrink-0 p-3 cursor-pointer ${imageRight ? "md:order-2" : "md:order-1"}`}
               onClick={() => setExpanded(true)}
               onMouseEnter={() => setImageHovered(true)}
               onMouseLeave={() => setImageHovered(false)}
@@ -60,6 +60,13 @@ export default function ProjectCard({
                   fill
                   className="object-cover"
                 />
+
+  {/* mobile expand overlay */}
+  <div className="absolute top-2 right-2 flex items-center gap-1.5 px-2 py-2 rounded-md bg-black/60 backdrop-blur-xs md:hidden">
+    <span className="text-white/70 text-xs">Tap to expand</span>
+    <Expand className="w-4 h-4 text-[#2196F3] stroke-2" />
+  </div>
+
                 <AnimatePresence>
                   {imageHovered && (
                     <motion.div
@@ -85,7 +92,7 @@ export default function ProjectCard({
             >
               <div>
                 <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-white font-semibold text-lg">
+                  <h2 className="text-white font-semibold  text-2xl md:text-lg">
                     {project.name}
                   </h2>
                   <div className="flex items-center gap-3">
@@ -93,10 +100,10 @@ export default function ProjectCard({
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-1 text-xs px-2.5 py-1 rounded-md border border-white/15 text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
+                      className="group flex items-center gap-1 text-sm py-1.5 md:text-xs px-2.5 md:py-1 rounded-md border border-white/15 text-white/40 hover:text-white hover:border-white/30 transition-all duration-200"
                     >
                       View Live{" "}
-                      <ExternalLink className="w-3.5 h-3.5 text-[#2196F3] transition-colors duration-200 group-hover:animate-[pulse_1s_ease-in-out_infinite]" />
+                      <ExternalLink className="w-4 h-4 md:w-3.5 md:h-3.5 text-[#2196F3] transition-colors duration-200 group-hover:animate-[pulse_1s_ease-in-out_infinite]" />
                     </a>
 
                     <a
@@ -105,7 +112,7 @@ export default function ProjectCard({
                       rel="noopener noreferrer"
                       className="text-white/40 hover:text-white transition-colors"
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className=" w-5 h-5 md:w-4 md:h-4" />
                     </a>
                   </div>
                 </div>

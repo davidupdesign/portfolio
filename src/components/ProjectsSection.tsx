@@ -63,7 +63,7 @@ function ProjectRow({
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute left-1/2 z-20 rounded-xl overflow-hidden shadow-2xl"
+            className="absolute left-1/2 z-20 rounded-xl overflow-hidden shadow-2xl hidden sm:block"
             style={{ width: 200, height: 90 }}
             initial={{ opacity: 0, y: 8, x: "-50%", scale: 0.95 }}
             animate={{ opacity: 1, y: 0, x: "-50%", scale: 1 }}
@@ -110,7 +110,7 @@ function ProjectRow({
 
       {/* right — description */}
       <span
-        className="text-sm font-medium transition-colors duration-300"
+        className="text-sm font-medium transition-colors duration-300 md:whitespace-nowrap text-right max-w-[120px] md:max-w-none"
         style={{
           color: isHovered
             ? "rgba(33, 150, 243, 1)"
