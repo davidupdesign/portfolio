@@ -37,7 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="fixed inset-0 z-0">
+        <div className="fixed inset-0 z-0 style={{ height: '100dvh' }}">
           <ColorBends
             rotation={45}
             speed={0.2}
@@ -56,7 +56,7 @@ export default function RootLayout({
         {/* overlay */}
         <div
           className="fixed inset-0 z-1"
-          style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(6px)" }}
+          style={{ height: '100dvh', background: "rgba(0,0,0,0.6)", backdropFilter: "blur(6px)" }}
         />
 
         <AudioProvider>
