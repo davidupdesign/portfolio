@@ -33,42 +33,47 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="fixed inset-0 z-0 style={{ height: '100dvh' }}">
-          <ColorBends
-            rotation={45}
-            speed={0.2}
-            colors={["#0d47a1", "#2196f3"]}
-            transparent
-            autoRotate={0}
-            scale={1}
-            frequency={1}
-            warpStrength={1}
-            mouseInfluence={0.1}
-            parallax={0.6}
-            noise={0.25}
-          />
+    <html lang="en" suppressHydrationWarning style={{ height: '100%' }}>
+  <body
+    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+    style={{ height: '100%', overflow: 'hidden auto' }}
+  >
+    <div style={{ position: 'relative', minHeight: '100%' }}>
+      {/* background — stays put */}
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0, height: '100dvh' }}>
+      <ColorBends
+    rotation={45}
+    speed={0.2}
+    colors={["#0d47a1", "#2196f3"]}
+    transparent
+    autoRotate={0}
+    scale={1}
+    frequency={1}
+    warpStrength={1}
+    mouseInfluence={0.1}
+    parallax={0.6}
+    noise={0.25}
+  />
+      </div>
+
+      {/* overlay */}
+      <div
+        style={{
+          position: 'fixed', inset: 0, zIndex: 1, height: '100dvh',
+          background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)'
+        }}
+      />
+
+      <AudioProvider>
+        <div className="relative z-10 min-h-screen">
+          <Navbar />
+          <ThemeProvider>
+            <AnimatedLayout>{children}</AnimatedLayout>
+          </ThemeProvider>
         </div>
-
-        {/* overlay */}
-        <div
-          className="fixed inset-0 z-1"
-          style={{ height: '100dvh', background: "rgba(0,0,0,0.6)", backdropFilter: "blur(6px)" }}
-        />
-
-        <AudioProvider>
-          <div className="relative z-10 min-h-screen">
-            <Navbar />
-
-            <ThemeProvider>
-              <AnimatedLayout>{children}</AnimatedLayout>
-            </ThemeProvider>
-          </div>
-        </AudioProvider>
-      </body>
-    </html>
+      </AudioProvider>
+    </div>
+  </body>
+</html>
   );
 }
