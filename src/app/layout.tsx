@@ -33,47 +33,62 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning style={{ height: '100%' }}>
-  <body
-    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    style={{ height: '100%', overflow: 'hidden auto' }}
-  >
-    <div style={{ position: 'relative', minHeight: '100%' }}>
-      {/* background — stays put */}
-      <div style={{ position: 'fixed', inset: 0, zIndex: 0, height: '100dvh' }}>
-      <ColorBends
-    rotation={45}
-    speed={0.2}
-    colors={["#0d47a1", "#2196f3"]}
-    transparent
-    autoRotate={0}
-    scale={1}
-    frequency={1}
-    warpStrength={1}
-    mouseInfluence={0.1}
-    parallax={0.6}
-    noise={0.25}
-  />
-      </div>
+    <html lang="en" suppressHydrationWarning style={{ height: "100%" }}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ height: "100%", overflow: "hidden auto" }}
+      >
+        <div style={{ position: "relative", minHeight: "100%" }}>
+          {/* background — stays put */}
+          <div
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 0,
+              height: "100dvh",
+              willChange: "transform",
+              transform: "translateZ(0)",
+            }}
+          >
+            <ColorBends
+              rotation={45}
+              speed={0.2}
+              colors={["#0d47a1", "#2196f3"]}
+              transparent
+              autoRotate={0}
+              scale={1}
+              frequency={1}
+              warpStrength={1}
+              mouseInfluence={0.1}
+              parallax={0.6}
+              noise={0.25}
+            />
+          </div>
 
-      {/* overlay */}
-      <div
-        style={{
-          position: 'fixed', inset: 0, zIndex: 1, height: '100dvh',
-          background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)'
-        }}
-      />
+          {/* overlay */}
+          <div
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 1,
+              height: "100dvh",
+              background: "rgba(0,0,0,0.6)",
+              backdropFilter: "blur(6px)",
+              willChange: "transform",
+              transform: "translateZ(0)",
+            }}
+          />
 
-      <AudioProvider>
-        <div className="relative z-10 min-h-screen">
-          <Navbar />
-          <ThemeProvider>
-            <AnimatedLayout>{children}</AnimatedLayout>
-          </ThemeProvider>
+          <AudioProvider>
+            <div className="relative z-10 min-h-screen">
+              <Navbar />
+              <ThemeProvider>
+                <AnimatedLayout>{children}</AnimatedLayout>
+              </ThemeProvider>
+            </div>
+          </AudioProvider>
         </div>
-      </AudioProvider>
-    </div>
-  </body>
-</html>
+      </body>
+    </html>
   );
 }
