@@ -217,7 +217,7 @@ export default function Hero() {
 
         {/* resume */}
         <a
-          href="YOUR_RESUME_URL"
+          href="https://davidk-resume.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="ml-auto self-start hidden sm:block"

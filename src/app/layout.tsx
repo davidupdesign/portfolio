@@ -22,6 +22,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "DK - Portfolio",
   description: "David K - Full-stack Developer",
+  icons: {
+    icon: "/chart-no-axes-gantt.svg",
+  },
 };
 
 export default function RootLayout({
