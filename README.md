@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DK — Portfolio
+
+Personal portfolio website built with Next.js 16, TypeScript, and Tailwind CSS v4.
+
+**Live:** [davidk.vercel.app](https://davidk.vercel.app)
+---
+[![Preview](public/portfolio.webp)](https://davidk.vercel.app)
+
+---
+
+## Stack
+
+- **Framework** — Next.js 16 (App Router)
+- **Language** — TypeScript
+- **Styling** — Tailwind CSS v4
+- **Animations** — Framer Motion
+- **Background** — Three.js (WebGL shader via ColorBends)
+- **Email** — EmailJS
+- **Map** — Leaflet + Mapbox
+- **Icons** — Simple Icons, Lucide React
+- **Fonts** — Geist (via next/font)
+- **Deployment** — Vercel
+
+---
+
+## Features
+
+- Animated WebGL background with mouse parallax
+- Persistent audio player across pages
+- Hero banner with live local clock and FloatingLines WebGL animation
+- Expandable project cards with live iframe previews
+- Portfolio changelog widget (fed via Clivy RSS)
+- EmailJS contact form
+- Mapbox dark map with animation and live clock
+- Transitions with Framer Motion
+- Fully responsive — mobile optimized throughout
+
+---
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx              # Home
+│   ├── projects/page.tsx     # Projects
+│   ├── contact/page.tsx      # Contact
+│   ├── layout.tsx            # Root layout with AudioProvider
+│   └── globals.css
+├── components/
+│   ├── Hero.tsx              # Hero banner, clock, music player
+│   ├── Navbar.tsx            # Fixed navbar with scroll blur
+│   ├── ProjectsSection.tsx   # Homepage project rows
+│   ├── ProjectCard.tsx       # Expandable project cards
+│   ├── ChangelogWidget.tsx   # Clivy RSS changelog
+│   ├── CTA.tsx               # Email copy button
+│   ├── Footer.tsx
+│   ├── ContactMap.tsx        # Leaflet + Mapbox map
+│   ├── ColorBends.tsx        # WebGL background
+│   ├── FloatingLines.tsx     # WebGL hero banner lines
+│   ├── AnimatedLayout.tsx    # Page transition wrapper
+│   └── PageTransition.tsx
+└── context/
+    └── AudioContext.tsx      # Persistent audio across navigation
+```
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file:
 
-## Learn More
+```env
+NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token
+```
 
-To learn more about Next.js, take a look at the following resources:
+EmailJS credentials are defined directly in `src/app/contact/page.tsx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Projects Featured
 
-## Deploy on Vercel
+| Project                                             | Description                        | Stack                               |
+| --------------------------------------------------- | ---------------------------------- | ----------------------------------- |
+| [Clivy](https://clivy-one.vercel.app)               | Changelog & release notes platform | Next.js, PostgreSQL, Prisma, Resend |
+| [Sine Fere](https://clothing-store-neon.vercel.app) | E-commerce clothing store          | Next.js, Stripe, Framer Motion      |
+| [SoundPro](https://soundpro.vercel.app)             | Product landing page               | React, Vite, Tailwind               |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
