@@ -58,7 +58,7 @@ export default function ProjectCard({
                   src={project.image}
                   alt={project.name}
                   fill
-                  className="object-cover"
+                  className="object-cover items-start"
                 />
 
   {/* mobile expand overlay */}

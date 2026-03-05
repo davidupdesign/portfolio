@@ -19,7 +19,7 @@ const projects: Project[] = [
     name: "Clivy",
     description: "Changelog and release notes platform. Create projects, write entries & publish to public timeline pages.",
     features: ["Full viewer and user side platform", "Account management system", "Many more core and interactive features"],
-    image: "/projects/clivy.webp",
+    image: "/projects/clivy-project.webp",
     tech: [
       { icon: siNextdotjs, label: "Next.js" }, { icon: siTypescript, label: "TypeScript" },
       { icon: siPostgresql, label: "PostgreSQL" }, { icon: siPrisma, label: "Prisma" },
@@ -33,7 +33,7 @@ const projects: Project[] = [
     name: "Sine Fere",
     description: "Modern e-commerce clothing store with automated product catalog and metadata-to-product info system.",
     features: ["Automated product catalog system", "Automated metadata → Product info", "Responsive design with smooth animations"],
-    image: "/projects/sinefere.webp",
+    image: "/projects/sinefere-project.webp",
     tech: [
       { icon: siNextdotjs, label: "Next.js" }, { icon: siTailwindcss, label: "Tailwind CSS" },
       { icon: siFramer, label: "Framer Motion" }, { icon: siStripe, label: "Stripe" },
@@ -46,7 +46,7 @@ const projects: Project[] = [
     name: "SoundPro",
     description: "A modern, responsive product landing page demonstrating fundamental component architecture and responsive design patterns.",
     features: ["Modern, Simple, Responsive", "Reusable structure", "Easily adjusted to various projects"],
-    image: "/projects/soundpro.png",
+    image: "/projects/soundpro-project.webp",
     tech: [
       { icon: siReact, label: "React" }, { icon: siVite, label: "Vite" },
       { icon: siTailwindcss, label: "Tailwind CSS" }, { icon: siJavascript, label: "JavaScript" },
