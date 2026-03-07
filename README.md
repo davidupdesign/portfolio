@@ -96,3 +96,7 @@ EmailJS credentials are defined directly in `src/app/contact/page.tsx`.
 | [SoundPro](https://soundpro.vercel.app)             | Product landing page               | React, Vite, Tailwind               |
 
 ---
+
+### IB
+
+This portfolio is heavily inspired by @iamdooboy
