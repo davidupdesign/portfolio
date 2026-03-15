@@ -127,6 +127,14 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  // preload all pfp images on mount
+  useEffect(() => {
+    pfpImages.forEach((src) => {
+      const img = document.createElement('img');
+      img.src = src;
+    });
+  }, []);
+
   return (
     <section className="container-narrow pt-6">
       {/* banner */}
@@ -253,12 +261,10 @@ export default function Hero() {
         </div>
       </a>
 
-     {/* tech stack  label */}
+      {/* tech stack  label */}
       <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-white/10 bg-white/5 mb-5">
         {/* <span className="w-1.5 h-1.5 rounded-full bg-[#2196F3]" /> */}
-        <span className="text-white/50 text-sm">
-          Tech Stack
-        </span>
+        <span className="text-white/50 text-sm">Tech Stack</span>
       </div>
 
       {/* tech stack */}
@@ -267,7 +273,6 @@ export default function Hero() {
           <TechCard key={item.label} icon={item.icon} label={item.label} />
         ))}
       </div>
-
     </section>
   );
 }

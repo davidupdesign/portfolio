@@ -42,7 +42,7 @@ export default function ContactMap() {
         duration: 1.5,
         easeLinearity: 0.1,
       });
-    }, 100);
+    }, 10);
 
     const map = L.map("contact-map", {
       center: [LAT, LNG],

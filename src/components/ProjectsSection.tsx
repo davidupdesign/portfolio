@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -128,6 +128,14 @@ function ProjectRow({
 export default function ProjectsSection() {
   // track which row index is hovered. null = none.
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  // preload all project hover images on mount
+  useEffect(() => {
+    projects.forEach((p) => {
+      const img = document.createElement('img');
+      img.src = p.image;
+    });
+  }, []);
 
   return (
     <section className="container-narrow mt-16 mb-16">
