@@ -3,9 +3,9 @@ import ProjectCard from "@/components/ProjectCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
-  siNextdotjs, siTypescript, siPostgresql, siPrisma,
-  siTailwindcss, siFramer, siResend, siVercel,
-  siStripe, siReact, siVite, siJavascript,
+  siNextdotjs, siTypescript,
+  siTailwindcss, siFramer, siVercel,
+  siStripe,
 } from "simple-icons";
 
 type TechIcon = { icon: { path: string; hex: string }; label: string };
@@ -16,18 +16,30 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: "Clivy",
-    description: "Changelog and release notes platform. Create projects, write entries & publish to public timeline pages.",
-    features: ["Full viewer and user side platform", "Account management system", "Many more core and interactive features"],
-    image: "/projects/clivy-project.webp",
+    name: "EI",
+    description: "Corporate website for an engineering company — venture studio, manufacturing, safety, architecture, and interior design under one brand.",
+    features: ["Payload CMS with multilingual content", "Service pages with 3D visuals", "Blog, wiki, careers, and contact flows"],
+    image: "/projects/ei-project.webp",
     tech: [
       { icon: siNextdotjs, label: "Next.js" }, { icon: siTypescript, label: "TypeScript" },
-      { icon: siPostgresql, label: "PostgreSQL" }, { icon: siPrisma, label: "Prisma" },
       { icon: siTailwindcss, label: "Tailwind CSS" }, { icon: siFramer, label: "Framer Motion" },
-      { icon: siResend, label: "Resend" }, { icon: siVercel, label: "Vercel" },
+      { icon: siVercel, label: "Vercel" },
     ],
-    live: "https://clivy-one.vercel.app",
-    github: "https://github.com/davidupdesign/clivy",
+    live: "https://ei.ge",
+    github: "https://github.com/davidupdesign/elite-infrastructure",
+  },
+  {
+    name: "VParking",
+    description: "Product site for a vertical carousel parking system — 16 cars in one footprint for commercial real estate.",
+    features: ["Interactive model and spec showcase", "Investor-focused landing sections", "GSAP-driven scroll animations"],
+    image: "/projects/vparking-project.webp",
+    tech: [
+      { icon: siNextdotjs, label: "Next.js" }, { icon: siTypescript, label: "TypeScript" },
+      { icon: siTailwindcss, label: "Tailwind CSS" }, { icon: siFramer, label: "Motion" },
+      { icon: siVercel, label: "Vercel" },
+    ],
+    live: "https://vparking.vercel.app",
+    github: "https://github.com/davidupdesign/vparking",
   },
   {
     name: "Sine Fere",
@@ -41,18 +53,6 @@ const projects: Project[] = [
     ],
     live: "https://clothing-store-neon.vercel.app",
     github: "https://github.com/davidupdesign/clothing-store",
-  },
-  {
-    name: "SoundPro",
-    description: "A modern, responsive product landing page demonstrating fundamental component architecture and responsive design patterns.",
-    features: ["Modern, Simple, Responsive", "Reusable structure", "Easily adjusted to various projects"],
-    image: "/projects/soundpro-project.webp",
-    tech: [
-      { icon: siReact, label: "React" }, { icon: siVite, label: "Vite" },
-      { icon: siTailwindcss, label: "Tailwind CSS" }, { icon: siJavascript, label: "JavaScript" },
-    ],
-    live: "https://soundpro.vercel.app",
-    github: "https://github.com/davidupdesign/landing-page/tree/main",
   },
 ];
 

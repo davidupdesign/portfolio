@@ -14,22 +14,22 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: "Clivy",
-    description: "Changelog App",
-    url: "https://clivy-one.vercel.app",
-    image: "/projects/clivy-homepage.webp",
+    name: "EI",
+    description: "Engineering Company Site",
+    url: "https://ei.ge",
+    image: "/projects/ei-homepage.webp",
+  },
+  {
+    name: "VParking",
+    description: "Vertical Parking System",
+    url: "https://vparking.vercel.app",
+    image: "/projects/vparking-homepage.webp",
   },
   {
     name: "Sine Fere",
     description: "Ecom Clothing Store",
     url: "https://clothing-store-neon.vercel.app",
     image: "/projects/sinefere-homepage.webp",
-  },
-  {
-    name: "SoundPro",
-    description: "Product Landing Page",
-    url: "https://soundpro.vercel.app",
-    image: "/projects/soundpro-homepage.webp",
   },
 ];
 
